@@ -17,7 +17,7 @@ const ContestSection = () => {
   const fetchContests = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:5001/api/contests', {
+      const res = await fetch('https://dsa-mastery-tool.onrender.com/api/contests', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -36,7 +36,7 @@ const ContestSection = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:5001/api/contests', {
+      const res = await fetch('https://dsa-mastery-tool.onrender.com/api/contests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const ContestSection = () => {
   const handleDeleteContest = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:5001/api/contests/${id}`, {
+      const res = await fetch(`https://dsa-mastery-tool.onrender.com/api/contests/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

@@ -19,8 +19,8 @@ const Home = () => {
       const headers = { 'Authorization': `Bearer ${token}` };
 
       const [statsRes, revRes] = await Promise.all([
-        fetch('http://localhost:5001/api/stats/dashboard', { headers }),
-        fetch('http://localhost:5001/api/revisions/today', { headers })
+        fetch('https://dsa-mastery-tool.onrender.com/api/stats/dashboard', { headers }),
+        fetch('https://dsa-mastery-tool.onrender.com/api/revisions/today', { headers })
       ]);
 
       if (statsRes.ok) setStats(await statsRes.json());

@@ -16,7 +16,7 @@ const Revise = () => {
       const token = localStorage.getItem('token');
       const headers = { 'Authorization': `Bearer ${token}` };
 
-      const res = await fetch('http://localhost:5001/api/revisions/today', { headers });
+      const res = await fetch('https://dsa-mastery-tool.onrender.com/api/revisions/today', { headers });
 
       if (res.ok) {
         const data = await res.json();
@@ -34,7 +34,7 @@ const Revise = () => {
     try {
       const token = localStorage.getItem('token');
       const headers = { 'Authorization': `Bearer ${token}` };
-      const res = await fetch(`http://localhost:5001/api/problems?page=${page}&limit=${limit}`, { headers });
+      const res = await fetch(`https://dsa-mastery-tool.onrender.com/api/problems?page=${page}&limit=${limit}`, { headers });
 
       if (res.ok) {
         const data = await res.json();
@@ -53,7 +53,7 @@ const Revise = () => {
     try {
       const token = localStorage.getItem('token');
       const newStatus = currentStatus === 'done' ? 'pending' : 'done';
-      const res = await fetch(`http://localhost:5001/api/problems/${problemId}/revision/${day}`, {
+      const res = await fetch(`https://dsa-mastery-tool.onrender.com/api/problems/${problemId}/revision/${day}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

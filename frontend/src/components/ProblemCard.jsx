@@ -20,7 +20,7 @@ const ProblemCard = ({ problem, onUpdate }) => {
     setHint({ text: '', type, loading: true });
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:5001/api/problems/${problem._id}/hint/${type}`, {
+      const res = await fetch(`https://dsa-mastery-tool.onrender.com/api/problems/${problem._id}/hint/${type}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -41,7 +41,7 @@ const ProblemCard = ({ problem, onUpdate }) => {
           MASTERED
         </div>
       )}
-      
+
       <div className="flex justify-between items-start mb-2 pr-12">
         <h3 className="font-mono text-lg text-foreground font-bold truncate">
           <a href={problem.url} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
@@ -100,27 +100,24 @@ const ProblemCard = ({ problem, onUpdate }) => {
       <div className="flex gap-2 mb-4">
         <button
           onClick={() => fetchHint(1)}
-          className={`flex-1 font-mono text-[10px] py-1.5 rounded border transition-all flex items-center justify-center gap-1 ${
-            hint.type === 1 ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted/30 border-border text-muted-foreground hover:border-primary/50'
-          }`}
+          className={`flex-1 font-mono text-[10px] py-1.5 rounded border transition-all flex items-center justify-center gap-1 ${hint.type === 1 ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted/30 border-border text-muted-foreground hover:border-primary/50'
+            }`}
         >
           {hint.loading && hint.type === 1 ? <Loader2 size={12} className="animate-spin" /> : <Sparkles size={12} />}
           HINT_1 (BRUTE)
         </button>
         <button
           onClick={() => fetchHint(2)}
-          className={`flex-1 font-mono text-[10px] py-1.5 rounded border transition-all flex items-center justify-center gap-1 ${
-            hint.type === 2 ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted/30 border-border text-muted-foreground hover:border-primary/50'
-          }`}
+          className={`flex-1 font-mono text-[10px] py-1.5 rounded border transition-all flex items-center justify-center gap-1 ${hint.type === 2 ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted/30 border-border text-muted-foreground hover:border-primary/50'
+            }`}
         >
           {hint.loading && hint.type === 2 ? <Loader2 size={12} className="animate-spin" /> : <Sparkles size={12} />}
           HINT_2 (BETTER)
         </button>
         <button
           onClick={() => fetchHint(3)}
-          className={`flex-1 font-mono text-[10px] py-1.5 rounded border transition-all flex items-center justify-center gap-1 ${
-            hint.type === 3 ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted/30 border-border text-muted-foreground hover:border-primary/50'
-          }`}
+          className={`flex-1 font-mono text-[10px] py-1.5 rounded border transition-all flex items-center justify-center gap-1 ${hint.type === 3 ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted/30 border-border text-muted-foreground hover:border-primary/50'
+            }`}
         >
           {hint.loading && hint.type === 3 ? <Loader2 size={12} className="animate-spin" /> : <Sparkles size={12} />}
           HINT_3 (OPTIMAL)
@@ -137,9 +134,9 @@ const ProblemCard = ({ problem, onUpdate }) => {
         </div>
       )}
 
-      <RevisionTimeline 
-        problemId={problem._id} 
-        revisionSchedule={problem.revisionSchedule} 
+      <RevisionTimeline
+        problemId={problem._id}
+        revisionSchedule={problem.revisionSchedule}
         onUpdate={onUpdate}
       />
     </div>

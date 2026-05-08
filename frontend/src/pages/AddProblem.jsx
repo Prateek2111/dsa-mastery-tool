@@ -23,7 +23,7 @@ const AddProblem = () => {
     setIsFetching(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:5001/api/problems/fetch-metadata', {
+      const res = await fetch('https://dsa-mastery-tool.onrender.com/api/problems/fetch-metadata', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const AddProblem = () => {
         topics: formData.topics.split(',').map(t => t.trim()).filter(Boolean)
       };
 
-      const res = await fetch('http://localhost:5001/api/problems', {
+      const res = await fetch('https://dsa-mastery-tool.onrender.com/api/problems', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

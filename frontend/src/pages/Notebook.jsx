@@ -21,7 +21,7 @@ const Notebook = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      let url = `http://localhost:5001/api/problems?page=${page}&limit=${limit}`;
+      let url = `https://dsa-mastery-tool.onrender.com/api/problems?page=${page}&limit=${limit}`;
 
       if (searchTerm) url += `&search=${encodeURIComponent(searchTerm)}`;
       if (filters.platform) url += `&platform=${filters.platform}`;

@@ -12,7 +12,7 @@ const RevisionTimeline = ({ problemId, revisionSchedule, onUpdate }) => {
   const handleMarkRevision = async (day, confidence) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:5001/api/problems/${problemId}/revision/${day}`, {
+      const res = await fetch(`https://dsa-mastery-tool.onrender.com/api/problems/${problemId}/revision/${day}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const RevisionTimeline = ({ problemId, revisionSchedule, onUpdate }) => {
                         onClick={async () => {
                           try {
                             const token = localStorage.getItem('token');
-                            const res = await fetch(`http://localhost:5001/api/problems/${problemId}/revision/${rev.day}`, {
+                            const res = await fetch(`https://dsa-mastery-tool.onrender.com/api/problems/${problemId}/revision/${rev.day}`, {
                               method: 'PUT',
                               headers: {
                                 'Content-Type': 'application/json',
