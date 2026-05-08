@@ -23,6 +23,15 @@ This app combines **Spaced Repetition** with **AI-Assisted Learning**. It helps 
 ## 🔄 Core Loop
 **Solve** → **Revise** → **Reinforce** → **Master**
 
+## 📸 Screenshots
+
+![Screenshot 1](https://res.cloudinary.com/dszoqau04/image/upload/v1778222644/brave_screenshot_localhost_5_w3ifqn.png)
+![Screenshot 2](https://res.cloudinary.com/dszoqau04/image/upload/v1778222647/brave_screenshot_localhost_xoh6gf.png)
+![Screenshot 3](https://res.cloudinary.com/dszoqau04/image/upload/v1778222645/brave_screenshot_localhost_1_ftjfxw.png)
+![Screenshot 4](https://res.cloudinary.com/dszoqau04/image/upload/v1778222645/brave_screenshot_localhost_2_x7ahaa.png)
+![Screenshot 5](https://res.cloudinary.com/dszoqau04/image/upload/v1778222645/brave_screenshot_localhost_3_c4kady.png)
+![Screenshot 6](https://res.cloudinary.com/dszoqau04/image/upload/v1778222645/brave_screenshot_localhost_4_ggnwf4.png)
+
 ## 🛠️ Tech Stack
 - **Frontend**: React 19, Tailwind CSS 4, Vite, Lucide React, Recharts
 - **Backend**: Node.js, Express, MongoDB, JWT Authentication
